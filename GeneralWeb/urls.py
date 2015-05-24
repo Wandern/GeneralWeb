@@ -19,7 +19,7 @@ from django.contrib.auth.models import User
 from rest_framework import serializers, viewsets,  routers
 
 
-# TODO: Begin documentation of API using SPhinx and/or Django Swagger
+# TODO: Begin documentation of API using Sphinx and/or Django Swagger
 # User Serialization is fine in the Projects url for the time being, but this should be encapsulated to its own app.
 # Serializers define the API representation
 class UserSerializer(serializers.HyperlinkedModelSerializer):
