@@ -3,16 +3,20 @@ from django.shortcuts import render
 from .forms import SignUpForm
 
 
+
 # Create your views here.
-def newsletter(request):
-    title = "Hello New User"
-    if request.user.is_authenticated():
-        title = "Hello %s" % request.user
+def home(request):
+    submit_value = "SignUp"
+    title = "Newsletter Signup"
+    greeting = title + " SignUp"
+
 
     form = SignUpForm(request.POST or None)
 
     context = {
+        "submit_value": submit_value,
         "title": title,
+        "greeting": greeting,
         "form": form
     }
 
@@ -22,4 +26,4 @@ def newsletter(request):
             "title": "Thank You"
         }
 
-    return render(request, "forms.html", context)
+    return render(request, "index.html", context)

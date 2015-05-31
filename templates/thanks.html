@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags  %}
+{% block head_title %} Welcome | {% endblock %}
+
+<style>
+{% block style %}
+
+{% endblock %}
+</style>
+
+
+{% block jumbotron %}
+  {% block jumbotron_content %}
+
+  {% endblock %}
+
+{% endblock %}
+
+{% block content %}
+    <div class='row'>
+        <div class='col-sm-6 col-sm-offset-3'>
+            <h1> {{ title }} </h1>
+        </div>
+    </div>
+{% endblock %}

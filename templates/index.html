@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags  %}
+{% load staticfiles %}
+
+{% block head_title %} Welcome | {% endblock %}
+
+<style>
+{% block style %}
+    .navbar-static-top{
+        margin-bottom: 0px !important;
+    }
+    .jumbotron{
+    background-color: #0E3D14;
+    color: #fff;
+    }
+{% endblock %}
+</style>
+
+
+{% block jumbotron %}
+    <div class="jumbotron">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>General Web Toolkit</h1>
+                    <p class="lead">This is my General Web Toolkit. As of yet, unnamed</p>
+                    <p class="lead">The purpose of this project is to have an advanced jumping off point, when developing web applications.</p>
+                    <p class="lead">
+                      <a class="btn btn-lg btn-primary" href="/accounts/register/" role="button">Join Us</a>
+                    </p>
+                </div>
+                <div class="col-sm-6">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/tkwZ1jG3XgA?feature=player_detailpage" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-3  text-align-center">
+          <p class="lead">Powered by Python</p><br><br>
+          <img src="{% static "img/python.jpeg" %}" class="img-responsive"/>
+        </div>
+        <div class="col-sm-3  text-align-center">
+          <p class="lead">Quick Start</p><br>
+          <span class="fa-stack fa-lg fa-5x">
+          <i class="fa fa-square fa-stack-2x"></i>
+          <i class="fa fa-coffee fa-inverse fa-stack-1x"></i>
+        </span>
+        </div>
+        <div class="col-sm-3  text-align-center">
+            <p class="lead">Always Open Source</p><br>
+          <span class="fa-stack fa-lg fa-5x">
+            <i class="fa fa-circle-o-notch fa-stack-2x"></i>
+            <i class="fa fa-github fa-stack-1x"></i>
+          </span>
+        </div>
+        <div class="col-sm-3">
+            <p class="lead">{{ title }}</p>
+            <form method='POST' action=''>{%  csrf_token %}
+                {{ form|crispy }}
+                <input class="btn btn-primary" type="submit" value={{ submit_value }}>
+            </form>
+        </div>
+    </div>
+{% endblock %}

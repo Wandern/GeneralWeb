@@ -1,10 +1,11 @@
 from rest_framework import permissions, renderers, viewsets
 from django.contrib.auth.models import User
-from snippets.serializers import UserSerializer, SnippetSerializer
-from snippets.models import Snippet
-from snippets.permissions import IsOwnerOrReadOnly
 from rest_framework.decorators import detail_route
 from rest_framework.response import Response
+
+from .models import Snippet
+from .permissions import IsOwnerOrReadOnly
+from .serializers import SnippetSerializer, UserSerializer
 
 
 class UserViewSet(viewsets.ReadOnlyModelViewSet):

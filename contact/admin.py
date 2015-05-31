@@ -8,7 +8,6 @@ from .models import Contact
 class ContactAdmin(admin.ModelAdmin):
     list_display = ["full_name", "__unicode__", "created_on", "updated_on"]
     form = ContactForm
-    # class Meta:
-    #     model = SignUp
+
 
 admin.site.register(Contact, ContactAdmin)
